@@ -63,7 +63,7 @@ jobs:
               "stg": "https://github.com/ekdjodiweknmicvne/wjnqiodkwap/raw/main/stg/latest.zip"
             }')[steps.branch.outputs.branch] }}
         run: |
-          wget latest.zip ${{ env.DALAMUD_URL }}
+          curl -L -o latest.zip ${{ env.DALAMUD_URL }}
           unzip latest.zip -d ~/dalamud/
 
       - name: Restore dependencies
