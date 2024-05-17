@@ -1,0 +1,23 @@
+[
+  {
+    "Author": "Haselnussbomber",
+    "Name": "HaselTweaks",
+    "InternalName": "HaselTweaks",
+    "AssemblyVersion": "22.0.1.11",
+    "Description": "Keep on tweaking.",
+    "ApplicableVersion": "any",
+    "RepoUrl": "https://github.com/Haselnussbomber/HaselTweaks",
+    "DalamudApiLevel": 9,
+    "LoadRequiredState": 1,
+    "LoadSync": false,
+    "CanUnloadAsync": false,
+    "LoadPriority": 0,
+    "Punchline": "A collection of quality of life tweaks.",
+    "AcceptsFeedback": true,
+    "Changelog": "Inventory Highlight\n\n- Fixed: Hovering HQ items would not highlight similar items when \"Ignore item quality\" was enabled.",
+    "DownloadCount": 0,
+    "LastUpdate": 1713627434,
+    "DownloadLinkInstall": "https://github.com/woimqimodkbrne/HaselTweaks/releases/download/22.0.1.11/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/woimqimodkbrne/HaselTweaks/releases/download/22.0.1.11/latest.zip"
+  }
+]
