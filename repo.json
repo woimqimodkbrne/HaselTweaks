@@ -3,7 +3,7 @@
     "Author": "Haselnussbomber",
     "Name": "HaselTweaks",
     "InternalName": "HaselTweaks",
-    "AssemblyVersion": "22.1.1.2",
+    "AssemblyVersion": "23.0.2.0",
     "Description": "Keep on tweaking.",
     "ApplicableVersion": "any",
     "RepoUrl": "https://github.com/Haselnussbomber/HaselTweaks",
@@ -16,8 +16,8 @@
     "AcceptsFeedback": true,
     "Changelog": "Scrollable Tabs\n\n- Fixed: The game would crashe when scrolling too far in the Expanded Retainer Inventory or Companion window.",
     "DownloadCount": 0,
-    "LastUpdate": 1715927398,
-    "DownloadLinkInstall": "https://github.com/woimqimodkbrne/HaselTweaks/releases/download/22.1.1.2/latest.zip",
-    "DownloadLinkUpdate": "https://github.com/woimqimodkbrne/HaselTweaks/releases/download/22.1.1.2/latest.zip"
+    "LastUpdate": 1715928574,
+    "DownloadLinkInstall": "https://github.com/woimqimodkbrne/HaselTweaks/releases/download/23.0.2.0/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/woimqimodkbrne/HaselTweaks/releases/download/23.0.2.0/latest.zip"
   }
 ]
