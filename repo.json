@@ -3,7 +3,7 @@
     "Author": "Haselnussbomber",
     "Name": "HaselTweaks",
     "InternalName": "HaselTweaks",
-    "AssemblyVersion": "22.0.1.11",
+    "AssemblyVersion": "22.1.1.2",
     "Description": "Keep on tweaking.",
     "ApplicableVersion": "any",
     "RepoUrl": "https://github.com/Haselnussbomber/HaselTweaks",
@@ -14,10 +14,10 @@
     "LoadPriority": 0,
     "Punchline": "A collection of quality of life tweaks.",
     "AcceptsFeedback": true,
-    "Changelog": "Inventory Highlight\n\n- Fixed: Hovering HQ items would not highlight similar items when \"Ignore item quality\" was enabled.",
+    "Changelog": "Scrollable Tabs\n\n- Fixed: The game would crashe when scrolling too far in the Expanded Retainer Inventory or Companion window.",
     "DownloadCount": 0,
-    "LastUpdate": 1713627434,
-    "DownloadLinkInstall": "https://github.com/woimqimodkbrne/HaselTweaks/releases/download/22.0.1.11/latest.zip",
-    "DownloadLinkUpdate": "https://github.com/woimqimodkbrne/HaselTweaks/releases/download/22.0.1.11/latest.zip"
+    "LastUpdate": 1715927398,
+    "DownloadLinkInstall": "https://github.com/woimqimodkbrne/HaselTweaks/releases/download/22.1.1.2/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/woimqimodkbrne/HaselTweaks/releases/download/22.1.1.2/latest.zip"
   }
 ]
