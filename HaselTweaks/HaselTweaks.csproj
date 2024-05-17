@@ -8,10 +8,10 @@
     <DalamudLibPath Condition="$(DALAMUD_HOME) != ''">$(DALAMUD_HOME)/</DalamudLibPath>
   </PropertyGroup>
 
-  <Import Project="$(DalamudLibPath)/targets/Dalamud.Plugin.targets"/>
+  <Import Project="$(DalamudLibPath)/targets/Dalamud.Plugin.targets" />
 
   <PropertyGroup>
-    <Version>23.0.0</Version>
+    <Version>23.0.2</Version>
     <OutputPath>..\bin\</OutputPath>
     <DebugType>embedded</DebugType>
   </PropertyGroup>

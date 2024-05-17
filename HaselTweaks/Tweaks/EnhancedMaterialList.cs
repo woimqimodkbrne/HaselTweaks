@@ -9,9 +9,9 @@ using FFXIVClientStructs.FFXIV.Client.Game;
 using FFXIVClientStructs.FFXIV.Client.Game.UI;
 using FFXIVClientStructs.FFXIV.Client.UI.Agent;
 using FFXIVClientStructs.FFXIV.Component.GUI;
+using HaselCommon.Enums;
 using HaselCommon.SheetLookup;
 using HaselCommon.Sheets;
-using HaselTweaks.Enums;
 using HaselTweaks.Structs;
 using Lumina.Excel.GeneratedSheets;
 using Character = FFXIVClientStructs.FFXIV.Client.Game.Character.Character;
@@ -136,7 +136,7 @@ public unsafe partial class EnhancedMaterialList : Tweak<EnhancedMaterialListCon
         {
             _recipeMaterialListLockPending = true;
             Log("Restoring RecipeMaterialList");
-            agentRecipeMaterialList->OpenByRecipeId(Config.RestoreMaterialListRecipeId, Math.Max(Config.RestoreMaterialListAmount, 1));
+            agentRecipeMaterialList->OpenByRecipeId((ushort)Config.RestoreMaterialListRecipeId, Math.Max(Config.RestoreMaterialListAmount, 1));
         }
     }
 

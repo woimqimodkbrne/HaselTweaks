@@ -1,12 +1,13 @@
 using Dalamud.Game.ClientState.Keys;
 using Dalamud.Utility.Signatures;
 using FFXIVClientStructs.FFXIV.Client.UI;
+using FFXIVClientStructs.FFXIV.Client.UI.Agent;
 using FFXIVClientStructs.FFXIV.Client.UI.Misc;
 using FFXIVClientStructs.FFXIV.Component.GUI;
+using HaselCommon.Enums;
 using HaselCommon.Utils;
 using HaselTweaks.Enums;
 using HaselTweaks.Structs;
-using HaselTweaks.Structs.Agents;
 
 namespace HaselTweaks.Tweaks;
 
@@ -25,6 +26,8 @@ public class CharacterClassSwitcherConfiguration
 [Tweak, IncompatibilityWarning("SimpleTweaksPlugin", "CharacterWindowJobSwitcher")]
 public unsafe partial class CharacterClassSwitcher : Tweak<CharacterClassSwitcherConfiguration>
 {
+    private const int NumClasses = 31;
+
     public enum ClassesJobsSubTabs
     {
         None,
@@ -56,6 +59,8 @@ public unsafe partial class CharacterClassSwitcher : Tweak<CharacterClassSwitche
      */
     [Signature("48 8D 4C 24 ?? E8 ?? ?? ?? ?? 48 8B 83 ?? ?? ?? ?? 48 8B CF 0F B7 9F")]
     private nint PvPTooltipAddress { get; init; }
+
+    private static nint AgentStatus_ShowAddress => GetAgentVFuncAddress<AgentStatus>(AgentInterfaceVfs.Show);
 
     public override void Enable()
     {
@@ -99,7 +104,7 @@ public unsafe partial class CharacterClassSwitcher : Tweak<CharacterClassSwitche
     {
         var result = AddonCharacterClass_OnSetupHook!.OriginalDisposeSafe(addon, numAtkValues, atkValues);
 
-        for (var i = 0; i < AddonCharacterClass.NUM_CLASSES; i++)
+        for (var i = 0; i < NumClasses; i++)
         {
             // skip crafters as they already have ButtonClick events
             if (IsCrafter(i)) continue;
@@ -132,7 +137,7 @@ public unsafe partial class CharacterClassSwitcher : Tweak<CharacterClassSwitche
     {
         AddonCharacterClass_OnUpdateHook.OriginalDisposeSafe(addon, numberArrayData, stringArrayData);
 
-        for (var i = 0; i < AddonCharacterClass.NUM_CLASSES; i++)
+        for (var i = 0; i < NumClasses; i++)
         {
             var node = addon->ButtonNodesSpan.GetPointer(i)->Value;
             if (node == null)
@@ -365,7 +370,7 @@ public unsafe partial class CharacterClassSwitcher : Tweak<CharacterClassSwitche
         gearsetModule->EquipGearset(selectedGearset.Id - 1);
     }
 
-    [VTableHook<AgentStatus>((int)AgentInterfaceVfs.Show)]
+    [AddressHook(nameof(AgentStatus_ShowAddress))]
     private void AgentStatus_Show(AgentStatus* agent)
     {
         if (Config.AlwaysOpenOnClassesJobsTab)
@@ -373,6 +378,6 @@ public unsafe partial class CharacterClassSwitcher : Tweak<CharacterClassSwitche
             agent->TabIndex = 2;
         }
 
-        AgentStatus_ShowHook.OriginalDisposeSafe(agent);
+        AgentStatus_ShowHook!.OriginalDisposeSafe(agent);
     }
 }
